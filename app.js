@@ -11,11 +11,12 @@ const output = document.getElementById('result');
 
 function formSubmitHandler(event) {
   event.preventDefault();
+
   const formData = new FormData(form);
   const numberInputs = extractNumbers(formData);
 
   let result = '';
-  
+
   try {
     const numbers = [];
     for (const numberInput of numberInputs) {
@@ -30,6 +31,8 @@ function formSubmitHandler(event) {
   }
 
   let resultText = '';
+
+  console.log("formSubmitHandler ::> ", result)
 
   if (result === 'invalid') {
     resultText = 'Invalid input. You must enter valid numbers.';
